@@ -1,7 +1,13 @@
 {
-  "name": "all-git",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@dwbinns/all-git",
+  "version": "1.0.1",
+  "description": "Run git commands on multiple repositories",
+  "homepage": "https://github.com/dwbinns/all-git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dwbinns/all-git.git"
+  },
+
   "main": "index.js",
   "type": "module",
   "keywords": [],
