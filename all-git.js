@@ -172,20 +172,23 @@ all-git run jq .version package.json
 
 
 async function branch(branchName) {
-    await run(
-        "git",
-        "checkout",
-        "-b",
-        branchName,
-        "--track",
-        `origin/${branchName}`
-    );
+    await run("git", "checkout", "-b", branchName);
+    await run("git", "push", "-u", "origin", "HEAD");
 }
 
 branch.command = "<new-branch-name>";
 branch.help = `
 Create a new branch in each git directory,
-and configure tracking to same named branch in origin remote.
+configure tracking and push to same named branch in origin remote
+`;
+
+async function checkout(branchName) {
+    await run("git", "checkout", branchName);
+}
+
+checkout.command = "<existing-branch-name>";
+checkout.help = `
+Create an existing branch in each git directory.
 `;
 
 
@@ -213,7 +216,7 @@ function help(commandName) {
 help.command = `[<subcommand>]`;
 help.help = 'Get help on subcommand. Omit for a summary of all commands';
 
-let commands = { status, run, branch, push, help };
+let commands = { status, run, branch, checkout, push, help };
 
 (async (command, ...args) => {
     return await (commands[command] || help)(...args) ?? 0;
