@@ -26,7 +26,7 @@ Repository prefix: git@github.com:dwbinns/
 
 ## Create branch
 
-Create a tracking branch
+Create a tracking branch:
 
 ```
 > all-git status my-branch-name
@@ -34,7 +34,7 @@ Create a tracking branch
 
 ## Switch branch
 
-Checkout an existing branch
+Checkout an existing branch:
 
 ```
 > all-git checkout my-branch-name

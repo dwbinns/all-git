@@ -7,7 +7,6 @@
     "type": "git",
     "url": "https://github.com/dwbinns/all-git.git"
   },
-
   "main": "index.js",
   "type": "module",
   "keywords": [],
